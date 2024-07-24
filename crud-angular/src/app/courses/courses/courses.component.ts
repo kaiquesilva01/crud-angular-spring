@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
   styleUrl: './courses.component.scss'
 })
 export class CoursesComponent {
-    courses: Observable<Course[]>;
+    courses$: Observable<Course[]>;
     displayedColumns = ['name', 'category']
 
     //coursesService: CoursesService
 
     constructor(private coursesService: CoursesService) {
       //this.coursesService = new CoursesService();
-      this.courses = this.coursesService.list();
+      this.courses$ = this.coursesService.list();
     }
 }
